@@ -1,0 +1,43 @@
+import java.io.*;
+public class Parcial_1 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+		
+		System.out.println("Digite tamaño del arreglo");
+		
+		int T = Integer.parseInt(br.readLine());
+		
+		System.out.println("Escriba los numeros dentro del arreglo");
+		
+		String Array_1 = br.readLine();
+		
+		String Array_2 [] = Array_1.split(",");
+		
+		System.out.println("Digite el numero de la diferencia");
+		int Diference = Integer.parseInt(br.readLine());
+		int C = 0;
+		
+		for (int l = 0; l < Array_2.length ; l++) {
+			for (int h = l; h < Array_2.length ; h++) {	
+			
+				int Num_1 = Integer.parseInt(Array_2[l]);
+				int Num_2 = Integer.parseInt(Array_2[h]);
+				int Num_3 = (Num_1 - Num_2);
+				
+				if(Math.abs(Num_3) == Math.abs(Diference))
+				{
+					C += 1;
+					String Pareja_United = "(" + Array_2[l] + " , " + Array_2[h] + ")";
+					System.out.println(Pareja_United);
+				}
+			}	
+		}
+		
+		System.out.println("El total de parejas con diferencia es " + C);
+
+	}
+
+}
+
